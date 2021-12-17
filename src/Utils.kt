@@ -16,3 +16,8 @@ fun readInputAsInt(name: String) = File("input", "$name.txt").readLines().map { 
  * Converts string to md5 hash.
  */
 fun String.md5(): String = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteArray())).toString(16)
+
+/**
+ * Converts string to a List<Int> of digits.
+ */
+fun String.digits(): List<Int> = this.toString().map { Character.getNumericValue(it) }
